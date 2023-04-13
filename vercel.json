@@ -1,0 +1,25 @@
+{
+  "src": "dist/main.js",
+  "functions": {
+    "api/**/*.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      "dest": "/dist/main.js"
+    },
+    {
+      "src": "/api/v2/pokemon/:term",
+      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      "dest": "/pokemon/:term"
+    },
+    {
+      "src": "/api/v2/pokemon",
+      "dest": "/pokemon"
+    }
+  ]
+}
